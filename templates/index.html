@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🌙 Manam Al-Huda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="stars-container"></div>
+    <div class="moon"></div>
+
+    <div class="container">
+        <h1>🌙 Manam Al-Huda</h1>
+        <p class="subtitle">Interprétation selon le <em>B.A-BA de l’Interprétation des Rêves</em>, le Coran et la Sunna</p>
+        <textarea id="dream-input" placeholder="Décrivez votre rêve..."></textarea>
+        <button id="interpret-btn">🔮 Interpréter mon rêve</button>
+        <div id="result"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
