@@ -1,0 +1,137 @@
+{
+  "dream_classification": {
+    "subconscient": {
+      "description": "Rêves reflétant désirs réprimés ou préoccupations quotidiennes.",
+      "examples": ["Célibataire rêvant d’intimité", "Personne affamée rêvant de nourriture"],
+      "attitude": "Ne pas interpréter. Ignorer ou faire des invocations."
+    },
+    "effrayants": {
+      "description": "Rêves inspirés par le Shaytan pour effrayer ou troubler.",
+      "examples": ["Tête qui se détache", "Réveil brusque entre 2h et Fajr"],
+      "attitude": "Cracher 3 fois sur la gauche, dire A’udhu billahi min ash-shaytan ir-rajim, changer de côté, ne pas raconter le rêve."
+    },
+    "veridiques": {
+      "description": "Messages d’Allah, bonne nouvelle ou avertissement.",
+      "types": {
+        "oppose": {
+          "example": "Voir beaucoup de gens = petit groupe en réalité",
+          "source_coran": "Sourate 8:43",
+          "note": "Le rire dans un rêve = présage d’échec (contrairement au sourire)"
+        },
+        "exact": {
+          "example": "Femme faisant ménage chez un homme = présage de mariage",
+          "source_sounna": "Vision de la conquête de La Mecque par le Prophète ﷺ"
+        },
+        "symbolique": {
+          "example": "11 étoiles + soleil + lune = prosternation des frères et parents (Youssouf AS)",
+          "source_savant": "Ibn Sirin, Al-Nabulsi"
+        }
+      },
+      "attitude": "Remercier Allah, partager seulement avec bienveillants, faire des invocations pour sa réalisation."
+    }
+  },
+  "symbols_interpretations": [
+    {
+      "symbol": "serpent",
+      "interpretation_ba_ba": "Grand serpent = attaque de djinn. Petit serpent = enfant.",
+      "page": 9,
+      "coran": "",
+      "sunna": "",
+      "savants": "Ibn Sirin : ennemi caché",
+      "category": "danger / avertissement"
+    },
+    {
+      "symbol": "rire (dans un rêve)",
+      "interpretation_ba_ba": "Présage d’échec ou de malheur (contrairement au sourire).",
+      "page": 5,
+      "coran": "",
+      "sunna": "",
+      "savants": "",
+      "category": "négatif"
+    },
+    {
+      "symbol": "Prophète Muhammad ﷺ",
+      "interpretation_ba_ba": "Bénédiction. Doit correspondre à sa description authentique. Ne jamais apporter de nouvelle loi.",
+      "page": 7,
+      "coran": "",
+      "sunna": "‘Celui qui me voit en songe, c’est comme s’il m’avait vu éveillé, car le diable ne peut prendre mes traits.’",
+      "savants": "Ibn Hajar : description doit correspondre aux hadiths physiques du Prophète",
+      "category": "bénédiction divine"
+    },
+    {
+      "symbol": "corde reliant ciel à terre",
+      "interpretation_ba_ba": "Symbolise l’Islam transmis par le Prophète ﷺ.",
+      "page": 10,
+      "coran": "",
+      "sunna": "Interprété par Abou Bakr devant le Prophète ﷺ",
+      "savants": "",
+      "category": "spirituel / guidance"
+    },
+    {
+      "symbol": "miel",
+      "interpretation_ba_ba": "Dans un rêve, symbolise la douceur du Coran ou une bénédiction divine.",
+      "page": 10,
+      "coran": "Sourate 16:69 — ‘Il y a dans le miel une guérison pour les hommes’",
+      "sunna": "Le Prophète ﷺ aimait le miel",
+      "savants": "Al-Nabulsi : miel = connaissance bénéfique ou subsistance licite",
+      "category": "positif"
+    },
+    {
+      "symbol": "être poursuivi",
+      "interpretation_ba_ba": "Peut indiquer une attaque mystique ou sorcellerie.",
+      "page": 13,
+      "coran": "",
+      "sunna": "",
+      "savants": "Ibn Sirin : poursuite = angoisse ou ennemi",
+      "category": "avertissement"
+    },
+    {
+      "symbol": "paralysie du sommeil",
+      "interpretation_ba_ba": "Attaque courante des djinns durant le sommeil.",
+      "page": 9,
+      "coran": "",
+      "sunna": "Réciter Ayat al-Kursi et les 3 dernières sourates avant de dormir",
+      "savants": "",
+      "category": "protection nécessaire"
+    },
+    {
+      "symbol": "chute de hauteur",
+      "interpretation_ba_ba": "Signe possible d’attaque mystique ou de sorcellerie.",
+      "page": 13,
+      "coran": "",
+      "sunna": "",
+      "savants": "",
+      "category": "avertissement"
+    },
+    {
+      "symbol": "cimetière",
+      "interpretation_ba_ba": "Peut indiquer une attaque mystique ou un rappel de la mort.",
+      "page": 13,
+      "coran": "",
+      "sunna": "",
+      "savants": "Ibn Sirin : cimetière = rappel de l’au-delà ou épreuve",
+      "category": "spirituel / avertissement"
+    }
+  ],
+  "practical_advice": {
+    "before_sleep": [
+      "Faire les ablutions",
+      "Dormir sur le côté droit",
+      "Réciter Ayat al-Kursi 3 fois",
+      "Réciter Al-Ikhlas, Al-Falaq, An-Nas et souffler sur les mains pour frotter le corps"
+    ],
+    "after_scary_dream": [
+      "Cracher 3 fois sur la gauche",
+      "Dire ‘A’udhu billahi min ash-shaytan ir-rajim’",
+      "Changer de position (côté droit)",
+      "Ne pas raconter le rêve",
+      "Faire 2 rak’at de prière"
+    ],
+    "after_veridical_dream": [
+      "Remercier Allah sincèrement",
+      "Partager seulement avec quelqu’un qui vous veut du bien",
+      "Demander à Allah de concrétiser le bien du rêve",
+      "Ne pas en faire une obsession"
+    ]
+  }
+}
