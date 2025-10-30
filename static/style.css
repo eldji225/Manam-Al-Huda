@@ -57,3 +57,28 @@ h1 {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(139, 92, 246, 0.6);
 }
+.slider {
+    background: rgba(15, 23, 42, 0.7);
+    padding: 15px;
+    border-radius: 50px;
+    margin: 25px 0;
+    border: 1px solid rgba(253, 230, 138, 0.3);
+}
+.slides {
+    display: flex;
+    animation: slide 15s infinite;
+}
+.slide {
+    min-width: 100%;
+    font-size: 1.1rem;
+    color: #FDE68A;
+}
+.slide a {
+    color: #FDE68A;
+    text-decoration: underline;
+}
+@keyframes slide {
+    0%, 33% { transform: translateX(0); }
+    34%, 66% { transform: translateX(-100%); }
+    67%, 100% { transform: translateX(-200%); }
+}
