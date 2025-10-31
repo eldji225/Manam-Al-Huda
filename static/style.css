@@ -57,25 +57,45 @@ h1 {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(139, 92, 246, 0.6);
 }
+/* Slider publicitaire animé — carrousel propre */
 .slider {
     background: rgba(15, 23, 42, 0.7);
     padding: 15px;
     border-radius: 50px;
     margin: 25px 0;
     border: 1px solid rgba(253, 230, 138, 0.3);
+    overflow: hidden; /* ✅ Empêche le débordement */
+    position: relative;
+    height: 60px; /* Hauteur fixe pour éviter les sauts */
 }
+
 .slides {
     display: flex;
-    animation: slide 15s infinite;
+    width: 300%; /* 3 slides × 100% */
+    animation: slide 15s infinite ease-in-out;
+    height: 100%;
 }
+
 .slide {
-    min-width: 100%;
+    min-width: 33.333%; /* 100% / 3 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.1rem;
     color: #FDE68A;
+    white-space: nowrap;
 }
+
 .slide a {
     color: #FDE68A;
     text-decoration: underline;
+    padding: 0 10px;
+}
+
+@keyframes slide {
+    0%, 33.33% { transform: translateX(0); }
+    33.34%, 66.66% { transform: translateX(-33.333%); }
+    66.67%, 100% { transform: translateX(-66.666%); }
 }
 @keyframes slide {
     0%, 33% { transform: translateX(0); }
