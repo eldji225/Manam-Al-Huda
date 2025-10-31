@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🌟 Avis des Utilisateurs — Manam Al-Huda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { background: linear-gradient(135deg, #0F172A, #1E1B4B, #3730A3); color: #F8FAFC; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+        h1 { text-align: center; color: #FDE68A; font-family: 'Amiri', serif; margin-bottom: 30px; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #FDE68A;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Retour à l'accueil</a>
+        <h1>🌟 Avis des Utilisateurs</h1>
+
+        <!-- Formulaire d'avis -->
+        <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: 15px; margin-bottom: 25px;">
+            <p style="margin-bottom: 10px;">Notez cette application :</p>
+            <div id="star-rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <input type="hidden" id="rating-input" value="5">
+            <textarea id="review-comment" placeholder="Votre commentaire (facultatif, max 300 caractères)" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 8px; background: #F5E6CA; color: #333;"></textarea>
+            <button id="submit-review" style="margin-top: 15px; background: #10B981; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Envoyer mon avis</button>
+            <div id="review-message" style="margin-top: 10px; color: #FDE68A;"></div>
+        </div>
+
+        <!-- Liste des avis -->
+        <div id="reviews-list">
+            <p style="text-align: center; color: #94A3B8;">Chargement des avis...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Gestion des étoiles
+        let selectedRating = 5;
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.value);
+                document.getElementById('rating-input').value = selectedRating;
+                document.querySelectorAll('.star').forEach(s => {
+                    s.classList.toggle('active', parseInt(s.dataset.value) <= selectedRating);
+                });
+            });
+            star.addEventListener('mouseover', () => {
+                document.querySelectorAll('.star').forEach(s => {
+                    s.style.color = parseInt(s.dataset.value) <= parseInt(star.dataset.value) ? '#FDE68A' : '#94A3B8';
+                });
+            });
+        });
+        document.querySelector('.container').addEventListener('mouseleave', () => {
+            document.querySelectorAll('.star').forEach(s => {
+                s.style.color = parseInt(s.dataset.value) <= selectedRating ? '#FDE68A' : '#94A3B8';
+            });
+        });
+
+        // Soumission
+        document.getElementById('submit-review').addEventListener('click', async () => {
+            const rating = document.getElementById('rating-input').value;
+            const comment = document.getElementById('review-comment').value;
+            const msg = document.getElementById('review-message');
+
+            const res = await fetch('/submit-review', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ rating, comment })
+            });
+            const data = await res.json();
+            if (res.ok) {
+                msg.innerHTML = `<span style="color:#10B981;">✅ ${data.success}</span>`;
+                document.getElementById('review-comment').value = '';
+                loadReviews();
+                setTimeout(() => msg.innerHTML = '', 3000);
+            } else {
+                msg.innerHTML = `<span style="color:#EF4444;">❌ ${data.error}</span>`;
+            }
+        });
+
+        // Chargement
+        async function loadReviews() {
+            const res = await fetch('/get-reviews');
+            const reviews = await res.json();
+            const container = document.getElementById('reviews-list');
+            if (reviews.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:#94A3B8;">Aucun avis pour le moment.</p>';
+                return;
+            }
+            container.innerHTML = reviews.reverse().map(r => `
+                <div style="background: rgba(30, 41, 59, 0.4); padding: 15px; margin-bottom: 15px; border-radius: 12px;">
+                    <div style="color: #FDE68A; margin-bottom: 5px;">
+                        ${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)} • ${r.date}
+                    </div>
+                    <div style="color: #E2E8F0; font-style: italic;">"${r.comment}"</div>
+                </div>
+            `).join('');
+        }
+
+        // Styles pour les étoiles
+        const style = document.createElement('style');
+        style.textContent = `
+            .star {
+                font-size: 28px;
+                color: #94A3B8;
+                cursor: pointer;
+                transition: color 0.2s;
+            }
+            .star.active, .star:hover {
+                color: #FDE68A;
+            }
+        `;
+        document.head.appendChild(style);
+
+        loadReviews();
+    </script>
+</body>
+</html>
