@@ -38,32 +38,6 @@
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <!-- Section Avis Utilisateurs -->
-<div class="container" style="margin-top: 50px; padding: 25px; background: rgba(15, 23, 42, 0.5); border-radius: 20px;">
-    <h3 style="color: #FDE68A; text-align: center; margin-bottom: 20px;">🌟 Avis des Utilisateurs</h3>
-
-    <!-- Formulaire d'avis -->
-    <div style="background: rgba(30, 41, 59, 0.6); padding: 20px; border-radius: 15px; margin-bottom: 25px;">
-        <p style="margin-bottom: 10px;">Notez cette application :</p>
-        <div id="star-rating">
-            <span class="star" data-value="1">★</span>
-            <span class="star" data-value="2">★</span>
-            <span class="star" data-value="3">★</span>
-            <span class="star" data-value="4">★</span>
-            <span class="star" data-value="5">★</span>
-        </div>
-        <input type="hidden" id="rating-input" value="5">
-        <textarea id="review-comment" placeholder="Votre commentaire (facultatif, max 300 caractères)" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 8px;"></textarea>
-        <button id="submit-review" style="margin-top: 15px; background: #10B981; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Envoyer mon avis</button>
-        <div id="review-message" style="margin-top: 10px; color: #FDE68A;"></div>
-    </div>
-
-    <!-- Affichage des avis -->
-    <div id="reviews-list">
-        <p style="text-align: center; color: #94A3B8;">Chargement des avis...</p>
-    </div>
-</div>
-
 <style>
 .star {
     font-size: 28px;
