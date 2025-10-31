@@ -27,6 +27,10 @@ def save_review(review):
 def home():
     return render_template("index.html")
 
+@app.route("/reviews")
+def reviews_page():
+    return render_template("reviews.html")
+
 @app.route("/submit-review", methods=["POST"])
 def submit_review():
     data = request.get_json()
