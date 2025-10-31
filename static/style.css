@@ -57,50 +57,56 @@ h1 {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(139, 92, 246, 0.6);
 }
-/* Slider JS — carrousel propre */
+/* Slider JS — carrousel propre et responsive */
 .slider {
     background: rgba(15, 23, 42, 0.7);
-    padding: 15px;
+    padding: 12px;
     border-radius: 50px;
-    margin: 25px 0;
+    margin: 20px 0;
     border: 1px solid rgba(253, 230, 138, 0.3);
     overflow: hidden;
     position: relative;
     height: 60px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .slides-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
     height: 100%;
+    width: 100%;
 }
 
 .slide {
     min-width: 100%;
+    flex-shrink: 0; /* 🔑 Empêche la compression sur mobile */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #FDE68A;
     white-space: nowrap;
+    text-align: center;
 }
 
 .slide a {
     color: #FDE68A;
     text-decoration: underline;
-    padding: 0 10px;
+    padding: 0 8px;
+    font-size: 0.95rem;
 }
 
 .slider-dots {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
+    gap: 6px;
+    margin-top: 8px;
 }
 
 .slider-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: #94A3B8;
     cursor: pointer;
@@ -108,6 +114,22 @@ h1 {
 
 .slider-dot.active {
     background: #FDE68A;
+}
+
+/* Amélioration mobile */
+@media (max-width: 768px) {
+    .slider {
+        height: 55px;
+        padding: 10px;
+        border-radius: 40px;
+    }
+    .slide {
+        font-size: 0.9rem;
+    }
+    .slide a {
+        padding: 0 6px;
+    }
+}
 }
 
 @keyframes slide {
