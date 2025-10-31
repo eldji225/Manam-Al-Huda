@@ -57,27 +57,26 @@ h1 {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(139, 92, 246, 0.6);
 }
-/* Slider publicitaire animé — carrousel propre */
+/* Slider JS — carrousel propre */
 .slider {
     background: rgba(15, 23, 42, 0.7);
     padding: 15px;
     border-radius: 50px;
     margin: 25px 0;
     border: 1px solid rgba(253, 230, 138, 0.3);
-    overflow: hidden; /* ✅ Empêche le débordement */
+    overflow: hidden;
     position: relative;
-    height: 60px; /* Hauteur fixe pour éviter les sauts */
+    height: 60px;
 }
 
-.slides {
+.slides-container {
     display: flex;
-    width: 300%; /* 3 slides × 100% */
-    animation: slide 15s infinite ease-in-out;
+    transition: transform 0.5s ease-in-out;
     height: 100%;
 }
 
 .slide {
-    min-width: 33.333%; /* 100% / 3 */
+    min-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,6 +89,25 @@ h1 {
     color: #FDE68A;
     text-decoration: underline;
     padding: 0 10px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #94A3B8;
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background: #FDE68A;
 }
 
 @keyframes slide {
