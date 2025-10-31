@@ -13,3 +13,37 @@ function createStars() {
     }
 }
 document.addEventListener('DOMContentLoaded', createStars);
+// Carrousel automatique
+document.addEventListener('DOMContentLoaded', () => {
+    const slidesContainer = document.getElementById('slides-container');
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('slider-dots');
+    let currentIndex = 0;
+
+    // Créer les points
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('slider-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.slider-dot');
+
+    function goToSlide(index) {
+        currentIndex = index;
+        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        goToSlide(currentIndex);
+    }
+
+    // Défilement automatique toutes les 5 secondes
+    setInterval(nextSlide, 5000);
+});
