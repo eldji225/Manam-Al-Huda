@@ -8,63 +8,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <!-- Insère ceci juste après <body> -->
-<div class="top-left-menu">
-  <a href="/avis" class="review-button">
-    <span>🌟</span>
-    Avis des utilisateurs
-  </a>
-</div>
-
-<style>
-  .top-left-menu {
-    position: absolute;
-    top: 1.2rem;
-    left: 1.5rem;
-    z-index: 10;
-  }
-
-  .review-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.45rem 1rem;
-    background: rgba(255, 255, 255, 0.04);
-    color: #c8e6c9;
-    text-decoration: none;
-    font-family: 'Cormorant', Georgia, serif;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    letter-spacing: 0.4px;
-    transition: all 0.25s ease;
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(150, 200, 180, 0.15);
-  }
-
-  .review-button:hover {
-    color: white;
-    background: rgba(40, 100, 75, 0.3);
-    border-color: rgba(120, 190, 160, 0.3);
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .review-button span {
-    font-size: 1.2rem;
-  }
-
-  @media (max-width: 600px) {
-    .top-left-menu {
-      top: 1rem;
-      left: 1rem;
-    }
-    .review-button {
-      font-size: 1rem;
-      padding: 0.35rem 0.9rem;
-      gap: 0.4rem;
-    }
-  }
-</style>
     <div style="text-align: right; padding: 10px;">
     <a href="/reviews" style="color: #FDE68A; text-decoration: none; font-size: 0.9rem;">🌟 Avis des utilisateurs</a>
 </div>
