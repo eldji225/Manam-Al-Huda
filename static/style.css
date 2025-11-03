@@ -176,10 +176,6 @@ footer {
     border: 1px solid rgba(253, 230, 138, 0.2);
 }
 
-.floating-reviews-btn:hover {
-    background: #3730A3;
-    box-shadow: 0 6px 20px rgba(253, 230, 138, 0.5);
-    transform: translateY(0) scale(1.05);
 }
 
 /* Icône étoile */
